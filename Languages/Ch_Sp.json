@@ -36,5 +36,12 @@
     "consoleQuitTitle": " * ---------- 控制台已经退出",
 
     "consoleCommandTips": " * [LitsQuestions](控制台) -> "
+  },
+
+  "commandsMessage": {
+    "helpDocument": {
+      "helpDocumentTitle1": " * ---------- 帮助文档",
+      "helpDocumentNo1": " * $ 正在启动帮助文档... "
+    }
   }
 }

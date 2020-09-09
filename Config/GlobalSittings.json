@@ -1,7 +1,8 @@
 {
   "fristTimeRun": false,
   "showWelcomeMenu": false,
-  "helpDocumentWebUrl": "",
 
-  "userLanguage": "Ch_Sp",
+  "helpDocumentWebUrl": "https://github.com/LittleSheep2010/LitsQuestions/wiki",
+
+  "userLanguage": "Ch_Sp"
 }

@@ -86,6 +86,15 @@ else:
 
             usingCommand = str(consoleGet)
 
+            # 命令处理
+            if str(consoleGet) == "^HELP":
+                print(mainWareHouse.languagesContents[userNowUsingLanguage]["commandsMessage"]["helpDocument"]["helpDocumentTitle1"])
+                print(mainWareHouse.languagesContents[userNowUsingLanguage]["commandsMessage"]["helpDocument"]["helpDocumentNo1"])
+                webbrowser.open(mainWareHouse.globalSittings["helpDocumentWebUrl"])
+                input(mainWareHouse.languagesContents[userNowUsingLanguage]["globalMessageTips"][
+                          "anyKeyContinue_TipsMessage"])
+                mainPrintControler.UniversalClearScreen()
+
 
 
 # 切换工作目录

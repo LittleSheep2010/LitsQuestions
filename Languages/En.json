@@ -1,0 +1,47 @@
+{
+  "globalMessageTips": {
+    "anyKeyContinue_TipsMessage": " * & Press Enter key continue... "
+  },
+
+  "welcomeMessage": {
+    "welcomeMessage_NotShow": " * $ Not show welcome menu",
+
+    "welcomeMessage_Title1": " * ---------- Welcome",
+    "welcomeMessage_No1": " * $ Welcome use LitsQuestions",
+    "welcomeMessage_No2": " * $ This is a program practice platform",
+    "welcomeMessage_No3": " * $ You can put download QuestionFile in <QuestionData> folder",
+    "welcomeMessage_No4": " * $ And using command <LitsQuestions [Your QuestionFile name]>",
+    "welcomeMessage_No5": " * $ Then you can try to write programs",
+    "welcomeMessage_No6": " * $ If you don’t know how to do the question",
+    "welcomeMessage_No7": " * $ You can enter <^HELP> in the answer to show prompt",
+    "welcomeMessage_No8": " * $ If you don’t know how to use LitsQuestions-",
+    "welcomeMessage_No9": " * $ -you can enter this string of commands <LitsQuestions ^HELP use> in console",
+    "welcomeMessage_Title2": " * --------- Support",
+    "welcomeMessage_No10": " * $ Now support language list: ",
+    "welcomeMessage_No11": " * -  1. Python",
+    "welcomeMessage_No12": " * -  2. C/C++",
+    "welcomeMessage_No13": " * -  3. NodeJs"
+  },
+
+  "questionFileTips":{
+    "questionFileErrorTitle": " * ---------- Error",
+    "questionFileErrorMessage_No1": " * $ Cannot load QuestionFile (つД`)ノ !",
+    "questionFileErrorMessage_No2": " * $ Please check QuestionFile is in <QuestionData> folder",
+    "questionFileErrorMessage_No3": " * $ Auto quit... "
+  },
+
+  "consoleMessage": {
+    "consoleBootTitle": " * ---------- Console",
+    "consoleErrorTitle": " * ---------- Console Error (つД`)ノ",
+    "consoleQuitTitle": " * ---------- Console is quit",
+
+    "consoleCommandTips": " * [LitsQuestions](Console) -> "
+  },
+
+  "commandsMessage": {
+    "helpDocument": {
+      "helpDocumentTitle1": " * ---------- Help document",
+      "helpDocumentNo1": " * $ Booting help document... "
+    }
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "globalMessageTips": {
+    "anyKeyContinue_TipsMessage": " * & 按下 Enter 键继续... "
+  },
+
+  "welcomeMessage": {
+    "welcomeMessage_NotShow": " * $ 不显示欢迎界面",
+
+    "welcomeMessage_Title1": " * ---------- 欢迎",
+    "welcomeMessage_No1": " * $ 欢迎使用 LitsQuestions",
+    "welcomeMessage_No2": " * $ 这是一个程序测试平台",
+    "welcomeMessage_No3": " * $ 你可以吧你下载的 QuestionFile 放在 <QuestionData>",
+    "welcomeMessage_No4": " * $ 然后在用这个命令 <LitsQuestions [Your QuestionFile name]>",
+    "welcomeMessage_No5": " * $ 最后你就可以开始做题了",
+    "welcomeMessage_No6": " * $ 如果你不知道这题怎么做了",
+    "welcomeMessage_No7": " * $ 你可以在回答区输入 <^HELP> 来显示这题的提示",
+    "welcomeMessage_No8": " * $ 如果你不知道如何使用 LitsQuestions",
+    "welcomeMessage_No9": " * $ 你可以 控制台输入 <LitsQuestions ^HELP use> 来显示帮助文档",
+    "welcomeMessage_Title2": " * --------- 支持",
+    "welcomeMessage_No10": " * $ 现在支持的语言列表: ",
+    "welcomeMessage_No11": " * -  1. Python",
+    "welcomeMessage_No12": " * -  2. C/C++",
+    "welcomeMessage_No13": " * -  3. NodeJs"
+  },
+
+  "questionFileTips":{
+    "questionFileErrorTitle": " * ---------- 错误",
+    "questionFileErrorMessage_No1": " * $ 无法加载 QuestionFile (つД`)ノ !",
+    "questionFileErrorMessage_No2": " * $ 请确认你的 QuestionFile 在 <QuestionData> 文件夹里面",
+    "questionFileErrorMessage_No3": " * $ 自动退出... "
+  },
+
+  "consoleMessage": {
+    "consoleBootTitle": " * ---------- 控制台",
+    "consoleErrorTitle": " * ---------- 控制台错误 (つД`)ノ",
+    "consoleQuitTitle": " * ---------- 控制台已经退出",
+
+    "consoleCommandTips": " * [LitsQuestions](控制台) -> "
+  }
+}

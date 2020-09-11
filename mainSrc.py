@@ -1,7 +1,6 @@
 import os
-import time
 import sys
-import webbrowser
+import time
 
 import WareHouse
 import ConfigLoader
@@ -9,13 +8,25 @@ import ConfigLoader
 import PythonSheep.IOSheep.PrintFormat as PrintSheep
 import PythonSheep.IOSheep.InputFormat as InputSheep
 
+from Commands.HelpDocument import HelpDocument
+from Commands.ReloadConfig import ReloadConfig
+from Commands.OpenConfig import OpenConfig
+
 # 初始化类
 mainWareHouse = WareHouse.wareHouse()
 mainPrintControler = PrintSheep.PrintFormat()
 mainInputControler = InputSheep.InputFormat()
 
+# 初始化命令插件
+HelpDocumentPlugin = HelpDocument()
+ReloadConfigPlugin = ReloadConfig()
+OpenConfigPlugin = OpenConfig()
+
 # 读取配置文件
 ConfigLoader.LoadConfig(mainWareHouse)
+
+# 保存默认工作目录
+mainWareHouse.defaultWorkDir = os.getcwd()
 
 # 输出使用的语言
 if mainWareHouse.globalSittings["userLanguage"] == "En":
@@ -66,20 +77,20 @@ else:
         print(mainWareHouse.languagesContents[userNowUsingLanguage]["welcomeMessage"]["welcomeMessage_NotShow"])
         del userNowUsingLanguage
 
-    # 处理 Press Enter key continue
-    userNowUsingLanguage = mainWareHouse.userUsingLanguage
-    input(mainWareHouse.languagesContents[userNowUsingLanguage]["globalMessageTips"]["anyKeyContinue_TipsMessage"])
-    # 清屏
-    mainPrintControler.UniversalClearScreen()
-    del userNowUsingLanguage
+        # 处理 Press Enter key continue
+        userNowUsingLanguage = mainWareHouse.userUsingLanguage
+        input(mainWareHouse.languagesContents[userNowUsingLanguage]["globalMessageTips"]["anyKeyContinue_TipsMessage"])
+        # 清屏
+        mainPrintControler.UniversalClearScreen()
+        del userNowUsingLanguage
 
     # 控制台
-    while True:
-        userNowUsingLanguage = mainWareHouse.userUsingLanguage
+    userNowUsingLanguage = mainWareHouse.userUsingLanguage
 
-        # 打印 Console 标题
-        print(mainWareHouse.languagesContents[userNowUsingLanguage]["consoleMessage"]["consoleBootTitle"])
-        consoleGet = input(mainWareHouse.languagesContents[userNowUsingLanguage]["consoleMessage"]["consoleCommandTips"])
+    # 打印 Console 标题
+    print(mainWareHouse.languagesContents[userNowUsingLanguage]["consoleMessage"]["consoleBootTitle"])
+    while True:
+        consoleGet = input(mainWareHouse.languagesContents[userNowUsingLanguage]["consoleMessage"]["consoleCommandTips"]).upper()
 
         # 检测的输入的是 Command
         if str(consoleGet).startswith("^"):
@@ -88,14 +99,25 @@ else:
 
             # 命令处理
             if str(consoleGet) == "^HELP":
-                print(mainWareHouse.languagesContents[userNowUsingLanguage]["commandsMessage"]["helpDocument"]["helpDocumentTitle1"])
-                print(mainWareHouse.languagesContents[userNowUsingLanguage]["commandsMessage"]["helpDocument"]["helpDocumentNo1"])
-                webbrowser.open(mainWareHouse.globalSittings["helpDocumentWebUrl"])
-                input(mainWareHouse.languagesContents[userNowUsingLanguage]["globalMessageTips"][
-                          "anyKeyContinue_TipsMessage"])
-                mainPrintControler.UniversalClearScreen()
+                # 运行插件
+                HelpDocumentPlugin.run(userNowUsingLanguage, mainWareHouse)
 
+            elif str(consoleGet) == "^RELOAD":
+                # 运行插件
+                ReloadConfigPlugin.run(userNowUsingLanguage, mainWareHouse)
 
+            elif str(consoleGet) == "^SITTINGS-OPEN":
+                # 运行插件
+                OpenConfigPlugin.run(userNowUsingLanguage, mainWareHouse)
+
+            elif str(consoleGet) == "^EXIT":
+                # 离开
+                sys.exit(0)
+
+            else:
+                # 未知的命令处理
+                print(mainWareHouse.languagesContents[userNowUsingLanguage]["commandsMessage"]["unkownCommand_TipsMessage"]
+                      % str(consoleGet))
 
 # 切换工作目录
 mainWareHouse.defaultWorkDir = os.getcwd()
@@ -110,3 +132,68 @@ if not os.path.exists(mainWareHouse.loadingQuestionFileName) and not welcomeMode
     print(mainWareHouse.languagesContents[userNowUsingLanguage]["questionFileTips"]["questionFileErrorMessage_No3"])
     del userNowUsingLanguage
     sys.exit(1)
+
+else:
+    ConfigLoader.LoadQuestionFile(mainWareHouse, mainWareHouse.loadingQuestionFileName)
+
+    userNowUsingLanguage = mainWareHouse.userUsingLanguage
+
+    # 计算总共分数
+    sumScore = 0.0
+    for i in range(len(mainWareHouse.userQuestionFile["questions"])):
+        sumScore += mainWareHouse.userQuestionFile["questions"][i]["score"]
+
+    # 计算难度
+    projectDifficultyTemplate = ["Eazy", "Medium", "Hard", "Hardcore"]
+    projectDifficulty = ""
+    if len(projectDifficultyTemplate) < mainWareHouse.userQuestionFile["projectDifficulty"]:
+        projectDifficulty = "Unkown"
+    else:
+        projectDifficulty = projectDifficultyTemplate[mainWareHouse.userQuestionFile["projectDifficulty"]]
+    del projectDifficultyTemplate
+
+    # 打印 QuestionFile 信息
+    print(mainWareHouse.languagesContents[userNowUsingLanguage]["questionFileMessage"]["infoTitle"])
+    print(mainWareHouse.languagesContents[userNowUsingLanguage]["questionFileMessage"]["infoLanguage"]
+          % mainWareHouse.userQuestionFile["language"])
+    print(mainWareHouse.languagesContents[userNowUsingLanguage]["questionFileMessage"]["infoVersion"]
+          % mainWareHouse.userQuestionFile["version"])
+    print(mainWareHouse.languagesContents[userNowUsingLanguage]["questionFileMessage"]["infoProjectName"]
+          % mainWareHouse.userQuestionFile["projectName"])
+    print(mainWareHouse.languagesContents[userNowUsingLanguage]["questionFileMessage"]["infoTotalScore"]
+          % sumScore)
+    print(mainWareHouse.languagesContents[userNowUsingLanguage]["questionFileMessage"]["infoDifficulty"]
+          % projectDifficulty)
+    print(mainWareHouse.languagesContents[userNowUsingLanguage]["questionFileMessage"]["questionStartTitle"])
+    input(mainWareHouse.languagesContents[userNowUsingLanguage]["globalMessageTips"]["anyKeyContinue_TipsMessage"])
+
+    mainPrintControler.UniversalClearScreen()
+
+    # 开始测试
+    userSumScore = 0.0
+    for i in range(len(mainWareHouse.userQuestionFile["questions"])):
+        print(mainWareHouse.languagesContents[userNowUsingLanguage]["questionFileMessage"]["questionCountTitle"]
+              % int(i + 1))
+        print(mainWareHouse.userQuestionFile["questions"][i]["name"])
+        print(" ")
+        print(mainWareHouse.userQuestionFile["questions"][i]["explanation"])
+        answer = input(mainWareHouse.languagesContents[userNowUsingLanguage]["questionFileMessage"]["questionAnswer"])
+
+        if answer == mainWareHouse.userQuestionFile["questions"][i]["answer"]:
+            print(mainWareHouse.languagesContents[userNowUsingLanguage]["questionFileMessage"]["answerRight"])
+            userSumScore += mainWareHouse.userQuestionFile["questions"][i]["score"]
+        elif answer == mainWareHouse.globalSittings["questionHelpKey"]:
+            print(mainWareHouse.languagesContents[userNowUsingLanguage]["questionFileMessage"]["answerIs"]
+                  % mainWareHouse.userQuestionFile["questions"][i]["answer"])
+        else:
+            print(mainWareHouse.languagesContents[userNowUsingLanguage]["questionFileMessage"]["answerWorng"])
+
+        input(mainWareHouse.languagesContents[userNowUsingLanguage]["globalMessageTips"]["anyKeyContinue_TipsMessage"])
+        mainPrintControler.UniversalClearScreen()
+
+    # 综合打印
+    print(mainWareHouse.languagesContents[userNowUsingLanguage]["questionFileMessage"]["returnTitle"])
+    print(mainWareHouse.languagesContents[userNowUsingLanguage]["questionFileMessage"]["returnScore"] % userSumScore)
+    input(mainWareHouse.languagesContents[userNowUsingLanguage]["globalMessageTips"]["anyKeyContinue_TipsMessage"])
+    mainPrintControler.UniversalClearScreen()
+

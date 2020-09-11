@@ -1,3 +1,22 @@
 {
-
+  "language": "En",
+  "version": "B2020911",
+  "projectName": "Exmp",
+  "projectDifficulty": 0,
+  "autoFormat": true,
+  "questions": [
+    {
+      "name": " * ~ Math question",
+      "explanation": " * - Please figure out 100 + 100",
+      "answer": "200",
+      "prompt": "* ! Use calculator",
+      "score": 50
+    }, {
+      "name": "* ~ Math question",
+      "explanation": "* - Please figure out 10000 + 100",
+      "answer": "10100",
+      "prompt": "* ! Use calculator",
+      "score": 50
+    }
+  ]
 }

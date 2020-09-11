@@ -2,6 +2,8 @@ from PythonSheep.SheepJson import JsonLoader, JsonWareHouse
 
 from WareHouse import wareHouse
 
+import os
+
 def LoadConfig(mainWareHouse:wareHouse):
 
     # 初始化工具
@@ -34,3 +36,20 @@ def LoadConfig(mainWareHouse:wareHouse):
     mainWareHouse.languagesContents["Ch_Sp"] = JsonLoaderTool.ProcessJsonContents(JsonMainWareHouse,
                                                                                mainWareHouse.documentSaveID[
                                                                                    "languageCh_SpSaveID"])
+
+def LoadQuestionFile(mainWareHouse:wareHouse, questionFileName:str):
+
+    # 初始化工具
+    JsonLoaderTool = JsonLoader.JsonLoader()
+    JsonMainWareHouse = JsonWareHouse.JsonWareHouse()
+
+    # 更换工作目录
+    os.chdir(mainWareHouse.defaultWorkDir + "/QuestionData")
+
+    # 读取
+    mainWareHouse.documentSaveID["questionFileSaveID"] = JsonLoaderTool.LoadJsonFile(questionFileName,
+                                                                                     CommitWareHouse_JsonWareHouse=JsonMainWareHouse,
+                                                                                     AutoSave=True)
+    mainWareHouse.userQuestionFile = JsonLoaderTool.ProcessJsonContents(JsonMainWareHouse, mainWareHouse.documentSaveID["questionFileSaveID"])
+
+    os.chdir(mainWareHouse.defaultWorkDir)

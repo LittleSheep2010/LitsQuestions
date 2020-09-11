@@ -42,6 +42,38 @@
     "helpDocument": {
       "helpDocumentTitle1": " * ---------- Help document",
       "helpDocumentNo1": " * $ Help document "
-    }
+    },
+
+    "reloadConfig": {
+      "reloading_TipsMessage": " * $ Reloading config... ",
+      "reloadComplete_TipsMessage": " * $ Reload Complete (´▽｀) !"
+    },
+
+    "openConfig": {
+      "opening_TipsMessage": " * $ Open the configuration file... ",
+      "openComplete_TipsMessage": " * $ The configruation file open complete (≧▽≦) !"
+    },
+
+    "unkownCommand_TipsMessage": " * $ Unkown command: %s"
+  },
+
+  "questionFileMessage": {
+    "infoTitle": " * ---------- QuestionFile info",
+    "infoLanguage": " * QuestionFile language      --> (%s)",
+    "infoVersion": " * QuestionFile version       --> (%s)",
+    "infoProjectName": " * QuestionFile Project name  --> (%s)",
+    "infoTotalScore": " * QuestionFile max score     --> (%.2f)",
+    "infoDifficulty": " * QuestionFile difficulty    --> (%s)",
+    "questionStartTitle": " * ---------- Question will start... ",
+
+    "questionCountTitle": " * ---------- Question No.%d",
+    "questionAnswer": " * @ Please answer --> ",
+    "answerRight": " * $ Answer is right",
+    "answerWorng": " * $ Answer is worng",
+    "answerIs": " * $ Answer is --> (%s)",
+
+    "returnTitle": " * ---------- Result",
+    "returnScore": " * Score              (%.2f)",
+    "returnTimer": " * Using Time         (%.3f)"
   }
 }

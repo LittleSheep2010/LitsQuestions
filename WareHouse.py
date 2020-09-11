@@ -1,5 +1,4 @@
 class wareHouse:
-    loadingQuestionFileName = ""
     defaultWorkDir = ""
 
     documentSaveID = {}
@@ -8,3 +7,6 @@ class wareHouse:
     userUsingLanguage = ""
 
     globalSittings = {}
+
+    userQuestionFile = {}
+    loadingQuestionFileName = ""

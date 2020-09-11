@@ -42,6 +42,38 @@
     "helpDocument": {
       "helpDocumentTitle1": " * ---------- 帮助文档",
       "helpDocumentNo1": " * $ 正在启动帮助文档... "
-    }
+    },
+
+    "reloadConfig": {
+      "reloading_TipsMessage": " * $ 重新加载配置文件中... ",
+      "reloadComplete_TipsMessage": " * $ 重新载入完成 (´▽｀) !"
+    },
+
+    "openConfig": {
+      "opening_TipsMessage": " * $ 打开配置文件中... ",
+      "openComplete_TipsMessage": " * $ 配置文件打开完成 (≧▽≦) !"
+    },
+
+    "unkownCommand_TipsMessage": " * $ 未知的命令: %s"
+  },
+
+  "questionFileMessage": {
+    "infoTitle": " * ---------- QuestionFile 信息",
+    "infoLanguage": " * QuestionFile 语言      --> (%s)",
+    "infoVersion": " * QuestionFile 版本      --> (%s)",
+    "infoProjectName": " * QuestionFile 项目名字   --> (%s)",
+    "infoTotalScore": " * QuestionFile 最大分数   --> (%.2f)",
+    "infoDifficulty": " * QuestionFile 难度      --> (%s)",
+    "questionStartTitle": " * ---------- Question 即将开始... ",
+
+    "questionCountTitle": " * ---------- Question No.%d",
+    "questionAnswer": " * @ 请回答 --> ",
+    "answerRight": " * $ 正确",
+    "answerWorng": " * $ 错误",
+    "answerIs": " * $ 答案是 --> (%s)",
+
+    "returnTitle": " * ---------- 结果",
+    "returnScore": " * 分数              (%.2f)",
+    "returnTimer": " * 作答使用时间       (%.3f)"
   }
 }

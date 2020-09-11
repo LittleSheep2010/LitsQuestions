@@ -13,7 +13,7 @@
     "welcomeMessage_No4": " * $ And using command <LitsQuestions [Your QuestionFile name]>",
     "welcomeMessage_No5": " * $ Then you can try to write programs",
     "welcomeMessage_No6": " * $ If you don’t know how to do the question",
-    "welcomeMessage_No7": " * $ You can enter <^HELP> in the answer to show prompt",
+    "welcomeMessage_No7": " * $ You can enter <^HELP> in the answer to show prompt(Cannot)",
     "welcomeMessage_No8": " * $ If you don’t know how to use LitsQuestions-",
     "welcomeMessage_No9": " * $ -you can enter this string of commands <LitsQuestions ^HELP use> in console",
     "welcomeMessage_Title2": " * --------- Support",
@@ -67,6 +67,8 @@
     "questionStartTitle": " * ---------- Question will start... ",
 
     "questionCountTitle": " * ---------- Question No.%d",
+    "questionNameTitle": " * == Question Title",
+    "questionExplanation": " * == Question Explanation",
     "questionAnswer": " * @ Please answer --> ",
     "answerRight": " * $ Answer is right",
     "answerWorng": " * $ Answer is worng",

@@ -174,19 +174,27 @@ else:
     for i in range(len(mainWareHouse.userQuestionFile["questions"])):
         print(mainWareHouse.languagesContents[userNowUsingLanguage]["questionFileMessage"]["questionCountTitle"]
               % int(i + 1))
+        print(mainWareHouse.languagesContents[userNowUsingLanguage]["questionFileMessage"]["questionNameTitle"])
         print(mainWareHouse.userQuestionFile["questions"][i]["name"])
-        print(" ")
-        print(mainWareHouse.userQuestionFile["questions"][i]["explanation"])
+        print(mainWareHouse.languagesContents[userNowUsingLanguage]["questionFileMessage"]["questionExplanation"])
+        for j in range(len(mainWareHouse.userQuestionFile["questions"][i]["explanation"])):
+            print(mainWareHouse.userQuestionFile["questions"][i]["explanation"][j])
         answer = input(mainWareHouse.languagesContents[userNowUsingLanguage]["questionFileMessage"]["questionAnswer"])
 
-        if answer == mainWareHouse.userQuestionFile["questions"][i]["answer"]:
-            print(mainWareHouse.languagesContents[userNowUsingLanguage]["questionFileMessage"]["answerRight"])
-            userSumScore += mainWareHouse.userQuestionFile["questions"][i]["score"]
-        elif answer == mainWareHouse.globalSittings["questionHelpKey"]:
-            print(mainWareHouse.languagesContents[userNowUsingLanguage]["questionFileMessage"]["answerIs"]
-                  % mainWareHouse.userQuestionFile["questions"][i]["answer"])
-        else:
+        questionRight = False
+        for j in range(len(mainWareHouse.userQuestionFile["questions"][i]["answer"])):
+            if answer == mainWareHouse.userQuestionFile["questions"][i]["answer"][j]:
+                print(mainWareHouse.languagesContents[userNowUsingLanguage]["questionFileMessage"]["answerRight"])
+                userSumScore += mainWareHouse.userQuestionFile["questions"][i]["score"]
+                questionRight = True
+
+            else: continue
+
+        # 这题没有做对
+        if not questionRight:
             print(mainWareHouse.languagesContents[userNowUsingLanguage]["questionFileMessage"]["answerWorng"])
+            print(mainWareHouse.languagesContents[userNowUsingLanguage]["questionFileMessage"]["answerIs"]
+                  % str(mainWareHouse.userQuestionFile["questions"][i]["answer"]))
 
         input(mainWareHouse.languagesContents[userNowUsingLanguage]["globalMessageTips"]["anyKeyContinue_TipsMessage"])
         mainPrintControler.UniversalClearScreen()
@@ -196,4 +204,3 @@ else:
     print(mainWareHouse.languagesContents[userNowUsingLanguage]["questionFileMessage"]["returnScore"] % userSumScore)
     input(mainWareHouse.languagesContents[userNowUsingLanguage]["globalMessageTips"]["anyKeyContinue_TipsMessage"])
     mainPrintControler.UniversalClearScreen()
-

@@ -13,7 +13,7 @@
     "welcomeMessage_No4": " * $ 然后在用这个命令 <LitsQuestions [Your QuestionFile name]>",
     "welcomeMessage_No5": " * $ 最后你就可以开始做题了",
     "welcomeMessage_No6": " * $ 如果你不知道这题怎么做了",
-    "welcomeMessage_No7": " * $ 你可以在回答区输入 <^HELP> 来显示这题的提示",
+    "welcomeMessage_No7": " * $ 你可以在回答区输入 <^HELP> 来显示这题的提示(Cannot)",
     "welcomeMessage_No8": " * $ 如果你不知道如何使用 LitsQuestions",
     "welcomeMessage_No9": " * $ 你可以 控制台输入 <LitsQuestions ^HELP use> 来显示帮助文档",
     "welcomeMessage_Title2": " * --------- 支持",
@@ -67,6 +67,8 @@
     "questionStartTitle": " * ---------- Question 即将开始... ",
 
     "questionCountTitle": " * ---------- Question No.%d",
+    "questionNameTitle": " * == Question 标题",
+    "questionExplanation": " * == Question 描述",
     "questionAnswer": " * @ 请回答 --> ",
     "answerRight": " * $ 正确",
     "answerWorng": " * $ 错误",

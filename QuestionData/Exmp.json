@@ -16,7 +16,7 @@
       "explanation": "* - Please figure out 10000 + 100",
       "answer": "10100",
       "prompt": "* ! Use calculator",
-      "score": 50
+      "score": 50,
     }
   ]
 }

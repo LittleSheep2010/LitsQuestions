@@ -1,0 +1,20 @@
+{
+  "language": "Unkown",
+  "version": "B2020911",
+  "projectName": "Exmp",
+  "projectDifficulty": 0,
+  "autoFormat": true,
+  "questions": [
+    {
+      "name": " * ~ Get user input",
+      "explanation": [" * - I need get user input, using what function", "* - Tips: Function not need brackets"],
+      "answer": ["cin", "scanf"],
+      "score": 50
+    }, {
+      "name": "* ~ Print some things",
+      "explanation": ["* - I need show user some text, using what function", "* - Tips: Function not need brackets"],
+      "answer": ["count", "printf"],
+      "score": 50
+    }
+  ]
+}

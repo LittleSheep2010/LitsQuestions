@@ -1,33 +1,33 @@
 {
   "globalMessageTips": {
-    "anyKeyContinue_TipsMessage": " * & 按下 Enter 键继续... "
+    "anyKeyContinue_TipsMessage": " * & 按下 Enter 鍵繼續... "
   },
 
   "welcomeMessage": {
-    "welcomeMessage_NotShow": " * $ 不显示欢迎界面",
+    "welcomeMessage_NotShow": " * $ 不顯示歡迎界面",
 
-    "welcomeMessage_Title1": " * ---------- 欢迎",
-    "welcomeMessage_No1": " * $ 欢迎使用 LitsQuestions",
-    "welcomeMessage_No2": " * $ 这是一个程序测试平台",
-    "welcomeMessage_No3": " * $ 你可以把你下载的 QuestionFile 放在 <QuestionData>",
-    "welcomeMessage_No4": " * $ 然后再用这个命令 <LitsQuestions [Your QuestionFile name]>",
-    "welcomeMessage_No5": " * $ 最后你就可以开始做题了",
-    "welcomeMessage_No6": " * $ 如果你不知道这题怎么做了",
-    "welcomeMessage_No7": " * $ 你可以在回答区输入 <^HELP> 来显示这题的提示(Cannot)",
-    "welcomeMessage_No8": " * $ 如果你不知道如何使用 LitsQuestions",
-    "welcomeMessage_No9": " * $ 你可以在控制台输入 <LitsQuestions ^HELP use> 来显示帮助文档",
+    "welcomeMessage_Title1": " * ---------- 歡迎",
+    "welcomeMessage_No1": " * $ 歡迎使用 LitsQuestions",
+    "welcomeMessage_No2": " * $ 這是一個程序測試平台",
+    "welcomeMessage_No3": " * $ 你可以把你下載的 QuestionFile 放在 <QuestionData>",
+    "welcomeMessage_No4": " * $ 然後再用這個命令 <LitsQuestions [Your QuestionFile name]>",
+    "welcomeMessage_No5": " * $ 最後你就可以開始做題",
+    "welcomeMessage_No6": " * $ 如果你不知道這題怎麽做",
+    "welcomeMessage_No7": " * $ 你可以在回答區輸入 <^HELP> 來顯示這道題的提示(Cannot)",
+    "welcomeMessage_No8": " * $ 如果你不知道怎麽使用 LitsQuestions",
+    "welcomeMessage_No9": " * $ 你可以在控制台輸入 <LitsQuestions ^HELP use> 來顯示幫助文檔",
     "welcomeMessage_Title2": " * --------- 支持",
-    "welcomeMessage_No10": " * $ 现在支持的语言列表: ",
+    "welcomeMessage_No10": " * $ 現在支持的語言列表: ",
     "welcomeMessage_No11": " * -  1. Python",
     "welcomeMessage_No12": " * -  2. C/C++",
     "welcomeMessage_No13": " * -  3. NodeJs"
   },
 
   "questionFileTips":{
-    "questionFileErrorTitle": " * ---------- 错误",
-    "questionFileErrorMessage_No1": " * $ 无法加载 QuestionFile (つД`)ノ !",
-    "questionFileErrorMessage_No2": " * $ 请确认你的 QuestionFile 在 <QuestionData> 文件夹里面",
-    "questionFileErrorMessage_No3": " * $ 自动退出... "
+    "questionFileErrorTitle": " * ---------- 錯誤",
+    "questionFileErrorMessage_No1": " * $ 無法加載 QuestionFile (つД`)ノ !",
+    "questionFileErrorMessage_No2": " * $ 請確認你的 QuestionFile 在 <QuestionData> 文件夾裏面",
+    "questionFileErrorMessage_No3": " * $ 自動退出... "
   },
 
   "consoleMessage": {
